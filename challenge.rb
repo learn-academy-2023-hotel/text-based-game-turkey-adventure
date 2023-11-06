@@ -131,7 +131,6 @@ end
 
 def choice_one
   pig_noise = Sound.new("pig_noise.mp3")
-  # rifle_burst = Sound.new("rifle_burst.mp3")
 puts pig
   puts "This is Mr.Pig. He has come to help on your adventure."
   puts "Would you like Mr.Pig's help? Option 1, bring Mr.Pig along on your adventure. Option 2, take the map from Mr.Pig and go on your own."
@@ -141,18 +140,15 @@ puts pig
    puts forest
     choice_one1
   else 
-    "You steal the map from Mr. Pig and he squeals at you as you run away."
+    p "You steal the map from Mr. Pig and he SQUEALS at you as you run away."
     pig_noise.play
-    # rifle_burst.play
     stole_map
 
   end
 end
 def hunter
-  rifle_burst = Music.new("rifle_burst.mp3")
   puts hunter_face
    "The hunter finds you, and you freeze in place. you have been shot. You're now a feast at Thanksgiving."
-    rifle_burst.play
    puts game_over
 end
 
@@ -169,7 +165,6 @@ def choice_two
       else 
         "The hunter opens the closet door and is standing in front of you."
         hunter
-        rifle_burst.play
       end
 
 end
