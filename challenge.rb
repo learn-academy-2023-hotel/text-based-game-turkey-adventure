@@ -1,5 +1,5 @@
 require 'ruby2d'
-require_relative "pig_noise.mp3"
+# require_relative "pig_noise.mp3"
 
 # Text-based Game Challenge
 
@@ -65,11 +65,12 @@ def game_over
     puts line
   end 
 end
-def squeal
-  "/Users/learnacademy/Desktop/text-based-game-turkey-adventure/pig_noise.mp3"
-  pig_noise.play
-  
-end
+# def squeal
+#   "pig_noise.mp3"
+#   pig_noise.mp3.play
+# end
+# pig_noise = Sound.new("pig_noise.mp3")
+
 
 
 def win_game
@@ -129,6 +130,8 @@ end
 
 
 def choice_one
+  pig_noise = Sound.new("pig_noise.mp3")
+  # rifle_burst = Sound.new("rifle_burst.mp3")
 puts pig
   puts "This is Mr.Pig. He has come to help on your adventure."
   puts "Would you like Mr.Pig's help? Option 1, bring Mr.Pig along on your adventure. Option 2, take the map from Mr.Pig and go on your own."
@@ -139,18 +142,22 @@ puts pig
     choice_one1
   else 
     "You steal the map from Mr. Pig and he squeals at you as you run away."
-    squeal
+    pig_noise.play
+    # rifle_burst.play
     stole_map
 
   end
 end
-def hunter 
+def hunter
+  rifle_burst = Music.new("rifle_burst.mp3")
   puts hunter_face
    "The hunter finds you, and you freeze in place. you have been shot. You're now a feast at Thanksgiving."
+    rifle_burst.play
    puts game_over
 end
 
 def choice_two
+  pig_noise = Sound.new("pig_noise.mp3")
   puts hunter_image
   p  "A hunter is outside your window. Run! Option 1: start barricading the windows and doors to prevent the hunter from coming inside. Option 2: Hide in the closet"
       choice = gets.chomp
@@ -158,9 +165,11 @@ def choice_two
       if choice == "1"
         "The hunter breaks the barricade and enters the house." 
         hunter
+        pig_noise.play
       else 
         "The hunter opens the closet door and is standing in front of you."
         hunter
+        rifle_burst.play
       end
 
 end
