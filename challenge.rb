@@ -25,7 +25,66 @@ def pig
     puts line
   end
 end
+def forest
+  File.readlines("forest.txt") do |line|
+    puts line
+  end 
+end
+def hunter_image
+  File.readlines("hunter.txt") do |line|
+    puts line
+  end 
+end
+def turkey_reflection
+  File.readlines("turkeyreflection.txt") do |line|
+    puts line
+  end 
+end
+def hunter_face
+  File.readlines("hunter_face.txt") do |line|
+    puts line
+  end 
+end
+def pig2
+  File.readlines("pig2.txt") do |line|
+    puts line
+  end 
+end
+def congrats
+  File.readlines("congrats.txt") do |line|
+    puts line
+  end 
+end
+def game_over
+  File.readlines("game_over.txt") do |line|
+    puts line
+  end 
+end
 
+
+def win_game
+  p "Mr.Pig falls over and is knocked unconcious. Option 1, eat the fruit from the cornucopia. Option 2, eat Mr.Pig and become consumed by the dark forest."
+  choice = gets.chomp
+    if choice == "1"
+      puts congrats
+      "You ate the magical fruit and became human again. You take Mr.Pig back home and cook him for dinner."
+    else 
+      puts congrats
+      "You become consumed by the darkness and live forever as a turkey in the forest."
+    end
+  end
+
+def mr_pig 
+  p "Mr.Pig starts eating the fruit. Option 1, stop him from eating all of the fruit. Option 2, let him eat it."
+  choice = gets.chomp
+    if choice == "1"
+       "You find a rock on the ground and throw it right at Mr.Pig's head."
+       win_game
+    else 
+       "Mr.Pig finishes the fruit and turns human again. He catches you and cooks you for Thanksgiving."
+       puts game_over
+    end
+  end
 
 def choice_one1
   p "During your journey you find a shimmering light in the distance. Option 1: Do you go towards the light?
@@ -33,11 +92,13 @@ def choice_one1
   choice = gets.chomp
 
   if choice == "1"
-   p "You and Mr. Pig spot the cornucopia. You both sprint towards it, but Mr.Pig trips you and dashes towards it. It turns out Mr.Pig was also a human before too. Now he wants the fruit to himself to revert back to being human."
+    p "You and Mr. Pig spot the cornucopia. You both sprint towards it, but Mr.Pig trips you and dashes towards it. It turns out Mr.Pig was also a human before too. Now he wants the fruit to himself to revert back to being human."
+    puts pig2
+   mr_pig
   else 
     puts spider_web
     
-        p "You walk into the forest you get trapped in a giant web, unable to move. You see a giant spider named Arachnia eat Mr.Pig alive. It turns out Arachnia was also a human before, but was corrupted by the dark forest and he enjoys eating the cursed."
+       "You walk into the forest you get trapped in a giant web, unable to move. You see a giant spider named Arachnia eat Mr.Pig alive. It turns out Arachnia was also a human before, but was corrupted by the dark forest and he enjoys eating the cursed."
   end
 end
 
@@ -48,9 +109,11 @@ def stole_map
   choice = gets.chomp
 
   if choice == "1"
-  p  "Stuck forever serving Arachnia"
+   "Stuck forever serving Arachnia"
+   puts game_over
   else
-   p "You get eaten alive for trying to fight back"
+    "You get eaten alive for trying to fight back"
+    puts game_over
   end
 end
 
@@ -62,25 +125,29 @@ puts pig
   choice = gets.chomp   
   if choice == "1" 
    p "You and Mr. Pig start your journey."
+   puts forest
     choice_one1
   else 
-   p "You steal the map from Mr. Pig and he squeals at you as you run away."
+    "You steal the map from Mr. Pig and he squeals at you as you run away."
     stole_map
   end
 end
 def hunter 
+  puts hunter_face
    "The hunter finds you, and you freeze in place. you have been shot. You're now a feast at Thanksgiving."
+   puts game_over
 end
 
 def choice_two
+  puts hunter_image
   p  "A hunter is outside your window. Run! Option 1: start barricading the windows and doors to prevent the hunter from coming inside. Option 2: Hide in the closet"
       choice = gets.chomp
       
       if choice == "1"
-       p "The hunter breaks the barricade and enters the house." 
+        "The hunter breaks the barricade and enters the house." 
         hunter
       else 
-       p "The hunter opens the closet door and is standing in front of you."
+        "The hunter opens the closet door and is standing in front of you."
         hunter
       end
 
@@ -89,6 +156,7 @@ end
 def game_play
   puts 'Enter your name'
   name = gets.chomp 
+  puts turkey_reflection
   puts "#{name}, You wake up one day and you go in to the bathroom. You look in the mirror, and find that you've turned in to a turkey. "
   puts "A turkey appears and says you need to start the quest to get back to your human self, or become food for the upcoming feast."
   puts "You must find the enchanted cornucopia and eat the magical fruit inside to become human again."
@@ -98,7 +166,6 @@ def game_play
     p "You are teleported to a mystical forest."
      choice_one
     else 
-    p  "A hunter is outside your window. Run!"
       choice_two
     end
   end
