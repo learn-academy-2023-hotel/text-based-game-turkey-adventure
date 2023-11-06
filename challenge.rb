@@ -1,4 +1,8 @@
+require 'ruby2d'
+require_relative "pig_noise.mp3"
+
 # Text-based Game Challenge
+
 
 # Turkey Adventures
 # One good and one bad outcome: Live or get eaten
@@ -14,6 +18,7 @@
 # Result: You are teleported to a mystical forest.
 # Option 2: Succumb to your fate as a turkey. 
 # Result; A hunter is outside your window. Run
+loop do
 def spider_web
   File.readlines("spiderweb.txt") do |line|
     puts line
@@ -59,6 +64,11 @@ def game_over
   File.readlines("game_over.txt") do |line|
     puts line
   end 
+end
+def squeal
+  "/Users/learnacademy/Desktop/text-based-game-turkey-adventure/pig_noise.mp3"
+  pig_noise.play
+  
 end
 
 
@@ -129,7 +139,9 @@ puts pig
     choice_one1
   else 
     "You steal the map from Mr. Pig and he squeals at you as you run away."
+    squeal
     stole_map
+
   end
 end
 def hunter 
@@ -165,10 +177,15 @@ def game_play
     if choice == "1"
     p "You are teleported to a mystical forest."
      choice_one
-    else 
+    elsif choice == "2"
       choice_two
+    else
+      "ERROR. Please enter a 1 or 2. Try again."
     end
   end
   p game_play
-
+puts "Do you want to play again?(Enter 'yes' to play again.)"
+quit = gets.chomp.downcase
+break unless quit == 'yes'
+end
 
