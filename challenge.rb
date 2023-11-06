@@ -33,7 +33,7 @@ def choice_one1
   choice = gets.chomp
 
   if choice == "1"
-    "You and Mr. Pig spot the cornucopia. You both sprint towards it, but Mr.Pig trips you and dashes towards it. It turns out Mr.Pig was also a human before too. Now he wants the fruit to himself to revert back to being human."
+   p "You and Mr. Pig spot the cornucopia. You both sprint towards it, but Mr.Pig trips you and dashes towards it. It turns out Mr.Pig was also a human before too. Now he wants the fruit to himself to revert back to being human."
   else 
     puts spider_web
     
@@ -48,9 +48,9 @@ def stole_map
   choice = gets.chomp
 
   if choice == "1"
-    "Stuck forever serving Arachnia"
+  p  "Stuck forever serving Arachnia"
   else
-    "You get eaten alive for trying to fight back"
+   p "You get eaten alive for trying to fight back"
   end
 end
 
@@ -61,23 +61,27 @@ puts pig
   puts "Would you like Mr.Pig's help? Option 1, bring Mr.Pig along on your adventure. Option 2, take the map from Mr.Pig and go on your own."
   choice = gets.chomp   
   if choice == "1" 
-    "You and Mr. Pig start your journey."
+   p "You and Mr. Pig start your journey."
     choice_one1
   else 
-    "You steal the map from Mr. Pig and he squeals at you as you run away."
+   p "You steal the map from Mr. Pig and he squeals at you as you run away."
     stole_map
   end
 end
+def hunter 
+   "The hunter finds you, and you freeze in place. you have been shot. You're now a feast at Thanksgiving."
+end
 
 def choice_two
-  p ' Option 1: start barricading the windows and doors to prevent the hunter from coming inside.
-      Option 2: Hide in the closet'
+  p  "A hunter is outside your window. Run! Option 1: start barricading the windows and doors to prevent the hunter from coming inside. Option 2: Hide in the closet"
       choice = gets.chomp
       
       if choice == "1"
-        "The hunter breaks the barricade and enters the house." 
+       p "The hunter breaks the barricade and enters the house." 
+        hunter
       else 
-        "The hunter opens the closet door and is standing in front of you."
+       p "The hunter opens the closet door and is standing in front of you."
+        hunter
       end
 
 end
@@ -91,10 +95,11 @@ def game_play
   puts "What do you do next? Option 1, be brave and accept the adventure. Option 2, succumb to your fate as a turkey."
   choice = gets.chomp
     if choice == "1"
-     "You are teleported to a mystical forest."
+    p "You are teleported to a mystical forest."
      choice_one
     else 
-      "A hunter is outside your window. Run!"
+    p  "A hunter is outside your window. Run!"
+      choice_two
     end
   end
   p game_play
